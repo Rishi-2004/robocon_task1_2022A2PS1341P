@@ -1,5 +1,5 @@
-class Solution(object):
-    def isValid(self, s):
+class ParenthesesValidator:
+    def is_valid(self, s):
         """
         :type s: str
         :rtype: bool
@@ -14,3 +14,4 @@ class Solution(object):
             else:
                 stack.append(char)
         return not stack
+
