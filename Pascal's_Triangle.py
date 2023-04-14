@@ -1,5 +1,5 @@
-class Solution(object):
-    def generate(self, numRows):
+class PascalTriangleGenerator:
+    def generate_triangle(self, numRows):
         """
         :type numRows: int
         :rtype: List[List[int]]
