@@ -1,29 +1,29 @@
-class Solution(object):
-    def mergeTwoLists(self, list1, list2):
+class LinkedListMerger:
+    def merge_linked_lists(self, l1, l2):
         """
-        :type list1: Optional[ListNode]
-        :type list2: Optional[ListNode]
+        :type l1: Optional[ListNode]
+        :type l2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
         
-        merged = ListNode()
-        current = merged
+        merged_list = ListNode()
+        current_node = merged_list
         
         
-        while list1 and list2:
-            if list1.val < list2.val:
-                current.next = list1
-                list1 = list1.next
+        while l1 and l2:
+            if l1.val < l2.val:
+                current_node.next = l1
+                l1 = l1.next
             else:
-                current.next = list2
-                list2 = list2.next
-            current = current.next
+                current_node.next = l2
+                l2 = l2.next
+            current_node = current_node.next
         
         
-        if list1:
-            current.next = list1
-        elif list2:
-            current.next = list2
+        if l1:
+            current_node.next = l1
+        elif l2:
+            current_node.next = l2
         
         
-        return merged.next
+        return merged_list.next
