@@ -1,14 +1,8 @@
+class Solution:
+    def judgeCircle(self, moves: str) -> bool:
+        coordinates = {'U': (0, 1), 'D': (0, -1), 'L': (-1, 0), 'R': (1, 0)}
+        x, y = 0, 0
+        for move in moves:
+            x, y = x + coordinates[move][0], y + coordinates[move][1]
+        return x == y == 0
 
-class Robot:
-    def is_at_origin(self, sequence: str) -> bool:
-        pos_x, pos_y = 0, 0
-        for move in sequence:
-            if move == "U":
-                pos_y += 1
-            elif move == "D":
-                pos_y -= 1
-            elif move == "L":
-                pos_x -= 1
-            elif move == "R":
-                pos_x += 1
-        return pos_x == 0 and pos_y == 0
