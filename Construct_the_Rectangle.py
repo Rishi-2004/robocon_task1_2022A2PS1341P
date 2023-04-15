@@ -1,4 +1,4 @@
-lass Solution(object):
+class Solution(object):
     def constructRectangle(self, area):
         """
         :type area: int
