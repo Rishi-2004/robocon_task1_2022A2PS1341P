@@ -1,5 +1,5 @@
-class ParenthesesValidator:
-    def is_valid(self, s):
+class Solution(object):
+    def isValid(self, s):
         """
         :type s: str
         :rtype: bool
@@ -8,8 +8,7 @@ class ParenthesesValidator:
         mapping = {")": "(", "}": "{", "]": "["}
         for char in s:
             if char in mapping:
-                top_element = stack.pop() if stack else '#'
-                if mapping[char] != top_element:
+                if not stack or mapping[char] != stack.pop():
                     return False
             else:
                 stack.append(char)
