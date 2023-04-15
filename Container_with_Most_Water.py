@@ -1,17 +1,18 @@
-class MaxAreaFinder:
-    def find_max_area(self, heights):
+class Solution(object):
+    def maxArea(self, height):
         """
-        :type heights: List[int]
+        :type height: List[int]
         :rtype: int
         """
-        left_idx = 0
-        right_idx = len(heights) - 1
+        n = len(height)
+        if n < 2:
+            return 0
+        i, j = 0, n - 1
         max_area = 0
-        while left_idx < right_idx:
-            area = (right_idx - left_idx) * min(heights[left_idx], heights[right_idx])
-            max_area = max(max_area, area)
-            if heights[left_idx] < heights[right_idx]:
-                left_idx += 1
+        while i < j:
+            max_area = max(max_area, min(height[i], height[j]) * (j - i))
+            if height[i] < height[j]:
+                i += 1
             else:
-                right_idx -= 1
+                j -= 1
         return max_area
